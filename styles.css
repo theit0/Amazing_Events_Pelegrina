@@ -1,12 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 :root{
     font-size: 16px;
 }
 
+p{
+    color: #555555;
+} 
 
 nav{
     display: flex;
@@ -39,6 +44,7 @@ ul li a:hover{
 footer {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .socials{
     display: flex;
@@ -48,7 +54,9 @@ footer {
     width: 2rem;
     height: 2rem;
 }
-
+.menu{
+    display: none;
+} 
 
 
 main {
@@ -57,7 +65,8 @@ main {
 
 fieldset{
     display: flex;
-    gap: 2rem;
+    gap: .5rem;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
@@ -66,6 +75,7 @@ fieldset{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    text-align: center;
 }
 .carrousel svg {
     width: 2rem;
@@ -74,6 +84,11 @@ fieldset{
 
 .search-bar{
     padding: 2rem 0 2rem 0;
+}
+
+.search-bar form {
+    display: flex;
+    justify-content: center;
 }
 
 .cards {
@@ -104,13 +119,45 @@ fieldset{
     align-items: center;
     gap: 1rem;
 }
+
+.contact-form form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    font-weight: bold;
+}
 h4 {
     padding-top: 1rem;
 }
 
-@media (max-width:576px){
+.submit-input{
+    margin-top: 1rem;
+    width: 11.5rem;
+}
 
+
+
+@media (max-width:576px){
+    footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 @media (max-width:767px){
+    .search-input{
+        margin-top: 1rem;
+    }
+}
+@media (max-width:991px){
+    nav ul{
+        display: none;
+    }
+    .menu{
+        display: block;
+    } 
     
 }
