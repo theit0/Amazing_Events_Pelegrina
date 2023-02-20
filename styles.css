@@ -13,12 +13,14 @@ p{
     color: #555555;
 } 
 
+
 nav{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     height: 5rem;
+    background-color: white;
 }
 
 .logo{
@@ -30,6 +32,7 @@ ul{
     flex-wrap: wrap;
     gap: 2rem;
     align-items: center;
+    justify-content: center;
     list-style: none;
 }
 ul li a{
@@ -45,10 +48,12 @@ footer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding: 1rem;
 }
 .socials{
     display: flex;
     gap: 2rem;
+    margin-top: 1rem;
 }
 .socials svg{
     width: 2rem;
@@ -58,9 +63,9 @@ footer {
     display: none;
 } 
 
-
 main {
     padding: 2rem 0 2rem 0;
+    background-color: #F2F2F2;
 }
 
 fieldset{
@@ -107,6 +112,7 @@ fieldset{
     border: 1px solid black;
     border-radius: .3rem;
     padding: 2rem;
+    background-color: white;
 }
 .cards div img {
     width: 12rem;
@@ -138,6 +144,7 @@ h4 {
 }
 
 table{
+    background-color: white;
     border: 1px solid black;
     border-radius: 0.3rem;
     margin-top: 2rem;
@@ -159,6 +166,38 @@ table th{
 
 input{
     padding: .2rem;
+}
+
+.details{
+    margin: 2rem;
+    padding: 1rem;
+    width: 22rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: .3rem;
+}
+.details div {
+    display: flex;
+}
+.details-title{
+    flex-direction: column;
+    padding-bottom: 1rem;
+}
+
+.details div img {
+    width: 18rem;
+    height: 12rem;
+    object-fit: cover;
+    border-radius: .3rem;
+}
+
+.main-container{
+    display: flex;
+    justify-content: center;
 }
 
 
