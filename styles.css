@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Rubik', sans-serif;
 }
 :root{
     font-size: 16px;
@@ -94,7 +94,7 @@ fieldset{
 .cards {
     display: flex;
     gap: 1rem;
-    justify-content: center;
+    justify-content: center;  
 }
 
 .cards div {
@@ -126,16 +126,15 @@ fieldset{
     justify-content: center;
     align-items: center;
 }
+
+.contact-form form input{
+    margin-bottom: 1rem;
+}
 h1{
     font-weight: bold;
 }
 h4 {
     padding-top: 1rem;
-}
-
-.submit-input{
-    margin-top: 1rem;
-    width: 11.5rem;
 }
 
 table{
@@ -156,6 +155,10 @@ table td{
 
 table th{
     padding: 1rem;
+}
+
+input{
+    padding: .2rem;
 }
 
 
