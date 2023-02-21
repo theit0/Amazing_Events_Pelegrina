@@ -13,6 +13,9 @@ p{
     color: #555555;
 } 
 
+main{
+    background-color: #F2F2F2;
+} 
 
 nav{
     display: flex;
@@ -22,6 +25,8 @@ nav{
     height: 5rem;
     background-color: white;
 }
+
+
 
 .logo{
     max-height: 3rem;
@@ -49,6 +54,7 @@ footer {
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 1rem;
+
 }
 .socials{
     display: flex;
@@ -65,7 +71,6 @@ footer {
 
 main {
     padding: 2rem 0 2rem 0;
-    background-color: #F2F2F2;
 }
 
 fieldset{
@@ -115,7 +120,7 @@ fieldset{
     background-color: white;
 }
 .cards div img {
-    width: 12rem;
+    width: 10.5rem;
     height: 12rem;
     object-fit: cover;
     border-radius: .3rem;
@@ -166,6 +171,8 @@ table th{
 
 input{
     padding: .2rem;
+    border : 1px solid black;
+    border-radius: .3rem;
 }
 
 .details{
