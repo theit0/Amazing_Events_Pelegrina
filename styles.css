@@ -9,13 +9,11 @@
     font-size: 16px;
 }
 
+
 p{
     color: #555555;
 } 
 
-main{
-    background-color: #F2F2F2;
-} 
 
 nav{
     display: flex;
@@ -51,6 +49,7 @@ ul li a:hover{
 
 footer {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 1rem;
@@ -58,18 +57,48 @@ footer {
 }
 .socials{
     display: flex;
-    gap: 2rem;
-    margin-top: 1rem;
+    gap: 1rem;
 }
-.socials svg{
+
+.socials a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    transition: 0.2s ease;
+}
+
+.socials a svg{
     width: 2rem;
     height: 2rem;
+    fill: #000000;
 }
-.menu{
+.insta:hover{
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+.face:hover{
+    background-color: #4267B2;
+}
+.wpp:hover{
+    background-color: #25D366;
+}
+
+.dropdown{
     display: none;
 } 
 
+button{
+    padding: .5rem 1rem .5rem 1rem;
+    color: white;
+    background-color:#d90368;
+    border: none;
+    border-radius: .3rem !important;
+}
+
 main {
+    background-color: #F2F2F2;
     padding: 2rem 0 2rem 0;
 }
 
@@ -101,6 +130,15 @@ fieldset{
     justify-content: center;
 }
 
+.search-input {
+    padding: .2rem .2rem .2rem .5rem;
+}
+
+.categories{
+    display: flex;
+    gap: 2rem;
+}
+
 .cards {
     display: flex;
     gap: 1rem;
@@ -114,16 +152,17 @@ fieldset{
     align-items: center;
     justify-content: center;
     text-align: center;
-    border: 1px solid black;
     border-radius: .3rem;
-    padding: 2rem;
+    padding-bottom: 2rem;
     background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.08);
 }
 .cards div img {
-    width: 10.5rem;
+    width: 15rem;
     height: 12rem;
     object-fit: cover;
-    border-radius: .3rem;
+    border-top-right-radius: .3rem;
+    border-top-left-radius: .3rem;
 }
 .price {
     display: flex;
@@ -171,35 +210,43 @@ table th{
 
 input{
     padding: .2rem;
-    border : 1px solid black;
+    border: none;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.08);
     border-radius: .3rem;
 }
 
 .details{
     margin: 2rem;
-    padding: 1rem;
     width: 22rem;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    border: 1px solid black;
     border-radius: .3rem;
+    background-color: white;
+    gap: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    padding-bottom: 2rem;
 }
 .details div {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center; 
+    padding: 0 2rem 0 2rem;
+}
+h6,.details div p {
+    margin: 0 !important;
 }
 .details-title{
     flex-direction: column;
-    padding-bottom: 1rem;
 }
 
 .details div img {
-    width: 18rem;
-    height: 12rem;
+    width: 22rem;
+    height: 18rem;
     object-fit: cover;
-    border-radius: .3rem;
 }
 
 .main-container{
@@ -224,8 +271,14 @@ input{
     nav ul{
         display: none;
     }
-    .menu{
-        display: block;
+    .dropdown{
+        display:block;
     } 
-    
+    .dropdown a{
+        list-style: none;
+        color: #555555;
+    } 
+    .dropdown a:hover,.dropdown a:focus{
+        color: black;
+    } 
 }
