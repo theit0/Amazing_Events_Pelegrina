@@ -13,7 +13,9 @@
 <body>
     <header>
         <nav class="container"> 
-            <img class="logo" src="./assets/Logo_Amazing_Events.png" alt="logo">
+            <a href="./home.html">
+                <img class="logo" src="./assets/Logo_Amazing_Events.png" alt="logo">
+            </a>
             <ul class="mb-0">
               <li><a href="./home.html">Home</a></li>
               <li><a href="./upcoming_events.html">Upcoming events</a></li>
@@ -41,28 +43,38 @@
         </section>
         <section class="container">
             <div class="container search-bar">
-                <form action="" class="row">
-                    <fieldset class="col-12 col-md-6 col-lg-8">
-                        <input type="checkbox" name="category" id="category">
-                        <label for="category">Category 1</label>
-                        <input type="checkbox" name="category2" id="category2">
-                        <label for="category2">Category 2</label>
-                        <input type="checkbox" name="category3" id="category3">
-                        <label for="category3">Category 3</label>
-                        <input type="checkbox" name="category4" id="category4">
-                        <label for="category4">Category 4</label>
-                        <input type="checkbox" name="category5" id="category5">
-                        <label for="category5">Category 5</label>
+                <form class="row">
+                    <fieldset class="col-12 col-md-6 col-lg-8 categories">
+                        <div>
+                            <input type="checkbox" name="category" id="category">
+                            <label for="category">Category 1</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="category2" id="category2">
+                            <label for="category2">Category 2</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="category3" id="category3">
+                            <label for="category3">Category 3</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="category4" id="category4">
+                            <label for="category4">Category 4</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="category5" id="category5">
+                            <label for="category5">Category 5</label>
+                        </div>
                     </fieldset>
                     <fieldset class="col-12 col-md-6 col-lg-4">
                         <input type="search" name="search" id="search" class="search-input">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"> <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search search-icon" viewBox="0 0 16 16"> <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
                     </fieldset>
                 </form>
             </div>
             <div class="cards container row m-0 mb-3">
                 <div class="col-12 col-sm-6 col-md-4">
-                    <img src="./assets/Marathon.jpg" alt="" width="200">
+                    <img src="./assets/Marathon.jpg" alt="marathon" width="200">
                     <h4>Marathon</h4>
                     <p>Descriptive title</p>
                     <article class="price">
@@ -71,7 +83,7 @@
                     </article>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4">
-                    <img src="./assets/Costume_Party.jpg" alt="" width="200">
+                    <img src="./assets/Costume_Party.jpg" alt="costume_party" width="200">
                     <h4>Costume Party</h4>
                     <p>Descriptive title</p>
                     <article class="price">
@@ -80,7 +92,7 @@
                     </article>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4">
-                    <img src="./assets/Cinema.jpg" alt="" width="200">
+                    <img src="./assets/Cinema.jpg" alt="cinema" width="200">
                     <h4>Cinema</h4>
                     <p>Descriptive title</p>
                     <article class="price">
@@ -89,7 +101,7 @@
                     </article>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4">
-                    <img src="./assets/Food_Fair.jpg" alt="" width="200">
+                    <img src="./assets/Food_Fair.jpg" alt="food_fair" width="200">
                     <h4>Food Fair</h4>
                     <p>Descriptive title</p>
                     <article class="price">
@@ -98,7 +110,7 @@
                     </article>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4">
-                    <img src="./assets/Museum_Tour.jpg" alt="" width="200">
+                    <img src="./assets/Museum_Tour.jpg" alt="museum_tour" width="200">
                     <h4>Museum Tour</h4>
                     <p>Descriptive title</p>
                     <article class="price">
@@ -107,7 +119,7 @@
                     </article>
                 </div>
                 <div class="col-12 col-sm-6 col-md-4">
-                    <img src="./assets/Music_Concert.jpg" alt="" width="200">
+                    <img src="./assets/Music_Concert.jpg" alt="music_concert" width="200">
                     <h4>Music Concert</h4>
                     <p>Descriptive title</p>
                     <article class="price">
