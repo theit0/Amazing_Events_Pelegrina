@@ -263,6 +263,10 @@ p{
     justify-content: center;
 }
 
+.bi-arrow-left,.bi-arrow-right{
+    color: #d90368;
+}
+
 
 @media (max-width:576px){
     footer{
