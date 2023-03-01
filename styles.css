@@ -267,6 +267,14 @@ p{
     color: #d90368;
 }
 
+.contact-main{
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 
 @media (max-width:576px){
     footer{
