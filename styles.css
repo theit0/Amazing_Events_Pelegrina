@@ -148,19 +148,20 @@ fieldset{
     justify-content: center;  
 }
 
-.cards div {
-    width: 14rem;
+.card {
+    width: 14rem !important;
+    height:fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
     border-radius: .3rem;
     padding-bottom: 1.2rem;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.08);
 }
-.cards div img {
+.card img {
     width: 14rem;
     height: 12rem;
     object-fit:cover;
