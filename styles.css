@@ -4,16 +4,29 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Rubik', sans-serif;
+    scroll-behavior: smooth;
+    transition: 0.3s;
 }
 :root{
     font-size: 16px;
+    --light: #d8dbe0;
+    --dark: #28292c;
 }
 
-
-p{
-    color: #555555;
+p,label,td,th{
+    color: #6e6e6e;
 } 
 
+
+ul li a, label{
+    font-weight: 500;
+}
+
+.categories div{
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
 
 nav{
     display: flex;
@@ -21,7 +34,6 @@ nav{
     justify-content: space-between;
     align-items: center;
     height: 5rem;
-    background-color: white;
 }
 
 
@@ -40,12 +52,82 @@ ul{
 }
 ul li a{
     text-decoration: none;
-    color: #555555 ;
+    color: #6e6e6e;
     transition: .2s;
 }
+
 ul li a:hover{
-    color: black;
+    color:#555555;
 }
+
+.dark-mode ul li a:hover{
+    color: white;
+}
+
+
+.toggle-switch {
+    position: relative;
+    width: 100px;
+    margin-bottom:1.6rem;
+}
+
+.label-switch {
+    position: absolute;
+    width: 50px;
+    height: 25px;
+    background-color: var(--dark);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.input-switch {
+    position: absolute;
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    top: 3.25px;
+    left: 4px;
+    width: 18.75px;
+    height: 18.75px;
+    border-radius: 50%;
+    box-shadow: inset 7px -1px 0px 0px var(--light);
+    background-color: var(--dark);
+    transition: 0.3s;
+}
+
+
+.input-switch:checked ~ .slider {
+    background-color: #25D366;
+}
+
+.input-switch:checked ~ .slider::before {
+    transform: translateX(23.75px);
+    background-color: var(--dark);
+    box-shadow: none;
+}
+
+.dark-main {
+    background-color: #171717;
+}
+
+.dark-card {
+    background-color: #1e1e1e !important;
+}
+.dark-text {
+    color: white !important;
+}
+
 
 footer {
     display: flex;
@@ -57,44 +139,50 @@ footer {
 }
 .socials{
     display: flex;
-    gap: 1rem;
+    gap: .5rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .socials a{
+    padding: .4rem 2rem .4rem 1.6rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 3.5rem;
-    height: 3.5rem;
-    border-radius: 50%;
-    transition: 0.2s ease;
+    gap: .6rem;
+    border-radius: .3rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.socials a:hover, button:hover{
+    filter: brightness(80%);
 }
 
 .socials a svg{
-    width: 2rem;
-    height: 2rem;
-    fill: #000000;
+    width: 1rem;
+    height: 1rem;
+    color:white;
 }
-.insta:hover{
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+.socials a label{
+    color:white;
 }
-.face:hover{
-    background-color: #4267B2;
-}
-.wpp:hover{
-    background-color: #25D366;
-}
+
+
 
 .dropdown{
     display: none;
 } 
 
 button, .submit{
-    padding: .5rem 1rem .5rem 1rem;
+    padding: .3rem 1rem .3rem 1rem;
     color: white;
+    font-weight: 500;
     background-color:#d90368;
     border: none;
     border-radius: .3rem !important;
+    transition: 0.2s;
 }
 
 main {
@@ -112,7 +200,8 @@ fieldset{
 
 .carrousel {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 1rem;
     align-items: center;
     text-align: center;
 }
@@ -131,9 +220,13 @@ fieldset{
 }
 
 .search-input {
-    padding: .2rem .2rem .2rem .5rem;
+    width: 15rem;
+    background-color: white;
+    padding: .2rem;
+    border-radius: .3rem;
 }
-.search-icon{
+
+.search-icon,.socials a label{
     cursor: pointer;
 }
 
@@ -159,7 +252,6 @@ fieldset{
     border-radius: .3rem;
     padding-bottom: 1.2rem;
     background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.08);
 }
 .card img {
     width: 14rem;
@@ -167,6 +259,9 @@ fieldset{
     object-fit:cover;
     border-top-right-radius: .3rem;
     border-top-left-radius: .3rem;
+}
+p{
+    padding: 0 1rem 0 1rem;
 }
 .price {
     display: flex;
@@ -189,13 +284,13 @@ fieldset{
 
 h1{
     font-weight: bold;
+    margin-bottom: 0 !important;
 }
 h4 {
     padding-top: 1rem;
 }
 
 table{
-    background-color: white;
     border: 1px solid black;
     border-radius: 0.3rem;
     margin-top: 2rem;
@@ -218,8 +313,12 @@ table th{
 input{
     padding: .2rem;
     border: none;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.08);
     border-radius: .3rem;
+}
+
+input[type="checkbox"]{
+    width: 1rem;
+    height: 1rem;
 }
 
 .details{
@@ -264,8 +363,8 @@ p{
     justify-content: center;
 }
 
-.bi-arrow-left,.bi-arrow-right{
-    color: #d90368;
+.bi-caret-left-fill,.bi-caret-right-fill{
+    color: black;
 }
 
 .contact-main{

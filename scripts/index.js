@@ -188,3 +188,6 @@ data.events.forEach((elem)=>{
 })
 
 $cards.append($fragment);
+
+
+
