@@ -170,4 +170,5 @@ var data = {
         "price":250
       }
     ]
-  };
+};
+export default data;
