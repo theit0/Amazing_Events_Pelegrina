@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.cdnfonts.com/css/resist-sans-display');
 *{
     margin: 0;
     padding: 0;
@@ -156,7 +157,7 @@ footer {
     transition: 0.2s;
 }
 
-.socials a:hover, button:hover{
+.socials a:hover, button:hover,.bi-caret-left-fill:hover,.bi-caret-right-fill:hover{
     filter: brightness(80%);
 }
 
@@ -190,7 +191,7 @@ button, .submit{
 
 main {
     background-color: #EAEAEA;
-    padding: 2rem 0 2rem 0;
+    padding:0 0 2rem 0 !important;
 }
 
 fieldset{
@@ -204,15 +205,33 @@ fieldset{
 .carrousel {
     display: flex;
     justify-content: center;
-    gap: 1rem;
     align-items: center;
+    gap: 2rem;
+    padding: 1rem;
     text-align: center;
+    background: radial-gradient(circle, rgba(217,3,104,1) 0%, rgba(199,1,94,1) 100%);
 }
+
 .carrousel svg {
     width: 2rem;
     height: 2rem;
+    color: white;
 }
 
+.navigate-arrows{
+    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: #9a0249;
+    border-radius: .3rem;
+    padding: 1rem;
+}
+.navigate-arrows h5{
+    padding-top: .5rem;
+}
 .search-bar{
     padding: 2rem 0 2rem 0;
 }
@@ -286,10 +305,14 @@ p{
 
 
 h1{
-    font-weight: bold;
+    color: white;
+    font-size: 4rem !important;
+    overflow: hidden;
+    font-family: 'Resist Sans Display', sans-serif;
     margin-bottom: 0 !important;
+    line-height: 0%;
 }
-h4 {
+h4 {font-family: 'Resist Sans Display', sans-serif;
     padding-top: 1rem;
 }
 
