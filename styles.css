@@ -43,6 +43,10 @@ nav{
     max-height: 3rem;
 }
 
+.logo-white{
+    display: none;
+}
+
 ul{
     display: flex;
     flex-wrap: wrap;
@@ -56,6 +60,9 @@ ul li a{
     color: #6e6e6e;
     transition: .2s;
 }
+
+
+
 
 ul li a:hover{
     color:#555555;
@@ -125,9 +132,12 @@ ul li a:hover{
 .dark-card {
     background-color: #1e1e1e !important;
 }
-.dark-text {
+
+.white-text {
     color: white !important;
 }
+
+
 
 
 footer {
@@ -157,8 +167,8 @@ footer {
     transition: 0.2s;
 }
 
-.socials a:hover, button:hover,.bi-caret-left-fill:hover,.bi-caret-right-fill:hover{
-    filter: brightness(80%);
+.socials a:hover, button:hover,.bi-caret-left-fill:hover,.bi-caret-right-fill:hover,.bi-arrow-down-circle-fill:hover,.view-events:hover{
+    filter: brightness(80%) ;
 }
 
 .socials a svg{
@@ -183,7 +193,7 @@ button, .submit{
     padding: .3rem 1rem .3rem 1rem;
     color: white;
     font-weight: 500;
-    background-color:#d90368;
+    background-color:#0d6efd;
     border: none;
     border-radius: .3rem !important;
     transition: 0.2s;
@@ -203,35 +213,61 @@ fieldset{
 }
 
 .carrousel {
+    flex-wrap: wrap;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
     padding: 1rem;
     text-align: center;
-    background: radial-gradient(circle, rgba(217,3,104,1) 0%, rgba(199,1,94,1) 100%);
+    background-size: 100% 100%;
+    background-position: 0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px;
+    background-image: radial-gradient(18% 28% at 18% 71%, #FFFFFF59 6%, #073AFF00 100%),radial-gradient(70% 53% at 36% 76%, #d90368 0%, #073AFF00 100%),radial-gradient(42% 53% at 15% 94%, #FFFFFFFF 7%, #073AFF00 100%),radial-gradient(42% 53% at 17% 53%, #FFFFFFFF 7%, #073AFF00 100%),radial-gradient(18% 28% at 35% 87%, #FFFFFFFF 7%, #073AFF00 100%),radial-gradient(31% 43% at 7% 98%, #FFFFFFFF 24%, #073AFF00 100%),radial-gradient(21% 37% at 72% 23%, #D3FF6D9C 24%, #073AFF00 100%),radial-gradient(21% 37% at 19% 75%, #D3FF6D9C 83%, #073AFF00 100%),radial-gradient(35% 56% at 91% 74%, #8A4FFFF5 9%, #073AFF00 100%),radial-gradient(74% 86% at 67% 38%, #d90368 24%, #073AFF00 100%),linear-gradient(125deg, #4EB5FFFF 1%, #4C00FCFF 100%);
 }
-
 .carrousel svg {
-    width: 2rem;
-    height: 2rem;
+    width: 1rem;
+    height: 1rem;
     color: white;
 }
 
-.navigate-arrows{
-    width: fit-content;
+.carrousel-card{
+    background-color: white;
     display: flex;
     flex-wrap: wrap;
+    padding: 3rem;
+    max-width: 40rem !important ;
+    max-height: max-content;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    border-radius: .3rem;
+}
+
+.carrousel-title{
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
-    background-color: #9a0249;
+    gap: 2rem;
+}
+
+.view-events{
+    width: fit-content;
+    padding: .3rem 1rem .3rem 1rem;
     border-radius: .3rem;
-    padding: 1rem;
+    background-color: #0d6efd;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
 }
-.navigate-arrows h5{
-    padding-top: .5rem;
+
+.view-events:hover{
+    color: white !important;
 }
+
+
+
 .search-bar{
     padding: 2rem 0 2rem 0;
 }
@@ -305,13 +341,27 @@ p{
 
 
 h1{
-    color: white;
-    font-size: 4rem !important;
-    overflow: hidden;
+    padding-top: .5rem;
+    font-size: 5rem !important;
     font-family: 'Resist Sans Display', sans-serif;
+    font-weight: 900;
     margin-bottom: 0 !important;
-    line-height: 0%;
+    line-height: 1 !important;
+    width: 25rem;
 }
+
+.bi-caret-left-fill,.bi-caret-right-fill{
+    fill: black;
+    width: 3rem !important;
+    height: 3rem !important;
+}
+
+.bi-arrow-down-circle-fill{
+    height: 2rem;
+    width: 2rem;
+    fill:#4EB5FFFF;
+}
+
 h4 {font-family: 'Resist Sans Display', sans-serif;
     padding-top: 1rem;
 }
@@ -403,6 +453,16 @@ p{
 
 
 @media (max-width:576px){
+    h1{
+        font-size: 3rem !important;
+    }
+    .bi-caret-left-fill,.bi-caret-right-fill{
+        width: 2rem !important;
+        height: 2rem !important;
+    }
+    .carrousel-title{
+        gap: .5rem;
+    }
     footer{
         display: flex;
         flex-direction: column;
@@ -410,6 +470,10 @@ p{
     }
     table td, table th{
         padding: .5rem;
+    }
+    .logo{
+        padding-left: 1rem;
+        max-height: 2rem;
     }
 }
 @media (max-width:767px){

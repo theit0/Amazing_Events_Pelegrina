@@ -39,21 +39,42 @@
                     <li><a class="dropdown-item" href="./past_events.html">Past events</a></li>
                     <li><a class="dropdown-item" href="./contact.html">Contact</a></li>
                     <li><a class="dropdown-item" href="./stats.html">Stats</a></li>
+                    <li class="dropdown-item">
+                        <div class="toggle-switch">
+                            <label class="label-switch">
+                                <input type ="checkbox" class="input-switch">
+                                <span class ="slider"></span>
+                            </label>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </nav>
     </header>
     <main>
-        <section class="container-fluid carrousel">
-            <a href="./contact.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
-                <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-              </svg></a>
-            <h1>Stats</h1>
-            <a href="./index.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-              </svg></a> 
+        <section class="container-fluid carrousel" style="background-size: 100% 100%;
+        background-position: 0px 0px;
+        background-image: linear-gradient(314deg, #A100FFFF 0%, #FF6500FF 0%, #A100FFFF 52%, #71C4FFFF 84%);">
+            <div class="container carrousel-card ">
+                <div class="container carrousel-title">
+                    <a href="./contact.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                        <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                      </svg></a>
+                      <h1>Stats</h1>
+                    <a href="./index.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                        <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                      </svg></a> 
+                </div>
+                <h6 class="container" style="max-width: 30rem;margin-bottom: 2rem;">Our statistics also allow you to see which events have been popular in the past and which have sold the most tickets. This will give you an idea of which events are the most popular and you can decide if it is worth buying tickets in advance.</h6>
+                <a href="#table" class="view-events">
+                    View
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                    </svg>
+                </a>
+            </div>
         </section>
-        <div class="container table-section">
+        <div class="container table-section" id="table">
             <table> 
                 <tr>
                     <th colspan="3">Events statistics</th>

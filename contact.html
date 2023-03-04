@@ -39,21 +39,42 @@
                     <li><a class="dropdown-item" href="./past_events.html">Past events</a></li>
                     <li><a class="dropdown-item" href="./contact.html">Contact</a></li>
                     <li><a class="dropdown-item" href="./stats.html">Stats</a></li>
+                    <li class="dropdown-item">
+                        <div class="toggle-switch">
+                            <label class="label-switch">
+                                <input type ="checkbox" class="input-switch">
+                                <span class ="slider"></span>
+                            </label>
+                        </div>
+                    </li>
                 </ul>
             </div>
           </nav>
-    </header>
-    <main class="container-fluid contact-main">
-        <section class="container-fluid carrousel">
-            <a href="./past_events.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
-                <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-              </svg></a>
-            <h1>Contact us</h1>
-            <a href="./stats.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-              </svg></a> 
+          
+        <section class="container-fluid carrousel" style="background-size: 100% 100%;background-position: 0px 0px; background-image: linear-gradient(90deg, #A100FFFF 0%, #71C4FFFF 100%);">
+            <div class="container carrousel-card ">
+                <div class="container carrousel-title">
+                    <a href="./past_events.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                        <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                      </svg></a>
+                    <h1>Contact us</h1>
+                    <a href="./stats.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                        <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                      </svg></a> 
+                </div>
+                <h6 class="container" style="max-width: 30rem;margin-bottom: 2rem;">Our goal is to provide exceptional customer service and ensure that our users have a great experience at our events. We are available to help make your events a success. Contact us!</h6>
+                <a href="#form" class="view-events">
+                    Go
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                    </svg>
+                </a>
+            </div>
         </section>
-        <div class="container contact-form">
+    </header>
+
+    <main class="container-fluid contact-main">
+        <div class="container contact-form" id="form">
             <form>
                 <label for="name">Name</label>
                 <input type="text" name="name" id="name">
@@ -61,7 +82,12 @@
                 <input type="email" name="mail" id="mail">
                 <label for="message">Message</label>
                 <input type="text" name="mesagge" id="message">
-                <button class="m-0 submit" type="submit" value="Sumbit">Submit</button>
+                <button class="submit" type="submit" value="Sumbit">
+                    Submit
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
+                        <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/>
+                      </svg>
+                </button>
             </form>
         </div>
     </main>

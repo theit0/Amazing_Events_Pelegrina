@@ -39,19 +39,40 @@
                     <li><a class="dropdown-item" href="./past_events.html">Past events</a></li>
                     <li><a class="dropdown-item" href="./contact.html">Contact</a></li>
                     <li><a class="dropdown-item" href="./stats.html">Stats</a></li>
+                    <li class="dropdown-item">
+                        <div class="toggle-switch">
+                            <label class="label-switch">
+                                <input type ="checkbox" class="input-switch">
+                                <span class ="slider"></span>
+                            </label>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </nav>
     </header>
     <main class="container-fluid">
-        <section class="container-fluid carrousel">
-            <a href="./upcoming_events.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
-                <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-              </svg></a>
-            <h1>Past events</h1>
-            <a href="./contact.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
-                <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-              </svg></a> 
+        <section class="container-fluid carrousel" style="background-size: 100% 100%;
+        background-position: 0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px;
+        background-image: radial-gradient(18% 28% at 24% 50%, #CEFAFFFF 7%, #073AFF00 100%),radial-gradient(18% 28% at 18% 71%, #FFFFFF59 6%, #073AFF00 100%),radial-gradient(70% 53% at 36% 76%, #E073FFFF 0%, #073AFF00 100%),radial-gradient(42% 53% at 15% 94%, #FFFFFFFF 7%, #073AFF00 100%),radial-gradient(42% 53% at 34% 72%, #FFFFFFFF 7%, #073AFF00 100%),radial-gradient(18% 28% at 35% 87%, #FFFFFFFF 7%, #073AFF00 100%),radial-gradient(31% 43% at 7% 98%, #FFFFFFFF 24%, #073AFF00 100%),radial-gradient(21% 37% at 72% 23%, #FF6DEE9C 24%, #073AFF00 100%),radial-gradient(35% 56% at 91% 74%, #8A4FFFF5 9%, #073AFF00 100%),radial-gradient(74% 86% at 67% 38%, #AC6DFFF5 24%, #073AFF00 100%),linear-gradient(125deg, #8308DBFF 1%, #4C00FCFF 100%);">
+            <div class="container carrousel-card ">
+                <div class="container carrousel-title">
+                    <a href="./upcoming_events.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+                        <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                      </svg></a>
+                      <h1>Past events</h1>
+                    <a href="./contact.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                        <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                      </svg></a>
+                </div>
+                <h6 class="container" style="max-width: 30rem;margin-bottom: 2rem;">The events listed in that section have ended, but you can still find valuable information to help you make informed decisions about future events.</h6>
+                <a href="#search" class="view-events">
+                    View
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                    </svg>
+                </a>
+            </div>
         </section>
         <section class="container">
             <div class="container search-bar">
