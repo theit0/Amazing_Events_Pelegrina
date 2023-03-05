@@ -17,8 +17,6 @@ $toggleSwitch.forEach(element => {
         document.body.classList.toggle("dark-card");
         $main.classList.toggle('dark-main');
         $table.classList.toggle("dark-card");
-
-
     });
 }); 
 

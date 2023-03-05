@@ -364,6 +364,7 @@ h4 {font-family: 'Resist Sans Display', sans-serif;
 }
 
 table{
+    background-color: white;
     border: 1px solid black;
     border-radius: 0.3rem;
     margin-top: 2rem;
