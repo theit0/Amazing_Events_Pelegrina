@@ -14,7 +14,7 @@
     --dark: #28292c;
 }
 
-p,label,td,th{
+p,label,td,th,h6{
     color: #6e6e6e;
 } 
 
@@ -29,15 +29,14 @@ ul li a, label{
     align-items: center;
 }
 
-nav{
+
+nav{    
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     height: 5rem;
 }
-
-
 
 .logo{   
     max-height: 3rem;
@@ -167,7 +166,7 @@ footer {
     transition: 0.2s;
 }
 
-.socials a:hover, button:hover,.bi-caret-left-fill:hover,.bi-caret-right-fill:hover,.bi-arrow-down-circle-fill:hover,.view-events:hover{
+.socials a:hover, button:hover,.bi-caret-left-fill:hover,.bi-caret-right-fill:hover,.view-events:hover{
     filter: brightness(80%) ;
 }
 
@@ -295,7 +294,6 @@ fieldset{
     gap: 1rem;
     justify-content: center;  
 }
-
 .card {
     width: 14rem !important;
     height:fit-content;
@@ -303,21 +301,33 @@ fieldset{
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    text-align: center;
-    border-radius: .3rem;
     padding-bottom: 1.2rem;
-    background-color: white;
+    text-align: center;
+    
 }
+figure {
+    overflow: hidden;
+}
+
 .card img {
     width: 14rem;
-    height: 12rem;
+    height: 14rem;
     object-fit:cover;
     border-top-right-radius: .3rem;
     border-top-left-radius: .3rem;
+    position: relative;
+    overflow: hidden;
 }
+
+.card img:hover {
+    transform: scale(1.5);
+}
+
 p{
-    padding: 0 1rem 0 1rem;
+    padding: 0 1rem 1rem 1rem;
+    margin-bottom: 0 !important;
 }
+
 .price {
     display: flex;
     align-items: center;
@@ -338,6 +348,7 @@ p{
 
 
 h1{
+    cursor:default;
     padding-top: .5rem;
     font-size: 5rem !important;
     font-family: 'Resist Sans Display', sans-serif;
@@ -347,20 +358,28 @@ h1{
     width: 25rem;
 }
 
+h1:hover{
+    text-shadow: cyan 3px 0,
+                red -3px 0
+}
+
 .bi-caret-left-fill,.bi-caret-right-fill{
+    transition: 0.5s all ease;
+    transform: rotateX(40deg) scale(1.2);
+    perspective: 900px;
     fill: black;
     width: 3rem !important;
     height: 3rem !important;
 }
-
-.bi-arrow-down-circle-fill{
-    height: 2rem;
-    width: 2rem;
-    fill:#4EB5FFFF;
+.bi-caret-left-fill:hover,.bi-caret-right-fill:hover{
+    transform: rotateX(-20deg) scale(1) ;
 }
 
-h4 {font-family: 'Resist Sans Display', sans-serif;
-    padding-top: 1rem;
+
+h4 {
+    font-family: 'Resist Sans Display', sans-serif;
+    padding: 0 .5rem .5rem .5rem !important;
+    margin: 0 !important;
 }
 
 table{
@@ -389,8 +408,12 @@ input{
     border: none;
     border-radius: .3rem;
 }
+input:focus{
+    outline: none;
+}
 
 input[type="checkbox"]{
+    accent-color: #d90368 ;
     width: 1rem;
     height: 1rem;
 }
@@ -448,6 +471,23 @@ p{
     align-items: center;
     justify-content: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media (max-width:576px){

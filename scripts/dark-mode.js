@@ -19,4 +19,3 @@ $toggleSwitch.forEach(element => {
         $table.classList.toggle("dark-card");
     });
 }); 
-
