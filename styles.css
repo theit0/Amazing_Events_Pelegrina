@@ -15,7 +15,7 @@
     --dark: #28292c;
 }
 
-p,label,td,th,h6{
+p,label,td,th,.carrousel-card h6{
     color: #6e6e6e;
 } 
 
