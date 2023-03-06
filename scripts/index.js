@@ -9,7 +9,10 @@ data.events.forEach((elem)=>{
     $templateCard.querySelector("p").textContent = elem.description;
     $templateCard.querySelector("h6").textContent = `Price: $${elem.price}`;
 
+    
     let $clone = document.importNode($templateCard,true);
+    //Uso de fragment para no tener que agregar un elemento por vez
+    // y de esta forma mejor el rendimiento de la página
     $fragment.append($clone);
 })
 
