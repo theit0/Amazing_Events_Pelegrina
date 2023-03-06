@@ -303,8 +303,8 @@ fieldset{
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding-bottom: 1.2rem;
     text-align: center;
+    padding: 0 1.5rem 1.5rem 1.5rem !important;
     
 }
 figure {
@@ -326,7 +326,7 @@ figure {
 }
 
 p{
-    padding: 0 1rem 1rem 1rem;
+    padding: 0  0 1rem 0;
     margin-bottom: 0 !important;
 }
 
@@ -378,7 +378,7 @@ h1:hover{
 
 
 h4 {
-    padding: 0 .5rem .5rem .5rem !important;
+    padding: 0 0 .5rem 0 !important;
     margin: 0 !important;
 }
 
