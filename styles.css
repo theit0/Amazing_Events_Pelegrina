@@ -377,9 +377,12 @@ h1:hover{
 }
 
 
-h4 {
+.card h4 {
     padding: 0 0 .5rem 0 !important;
-    margin: 0 !important;
+}
+
+footer h4 {
+    margin-bottom: 0 !important;
 }
 
 table{
