@@ -15,7 +15,7 @@
     --dark: #28292c;
 }
 
-p,label,td,th,.carrousel-card h6{
+p,label,td,th,.carrousel-card h6, .show-events-container h6{
     color: #6e6e6e;
 } 
 
@@ -476,7 +476,21 @@ p{
 }
 
 
+.show-event-button {
+    width: fit-content !important;
+}
 
+.show-events-container{
+    width: fit-content !important;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 3rem;
+    background-color: white;
+}
 
 
 @media (max-width:576px){
