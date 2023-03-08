@@ -8,6 +8,7 @@
     font-family: 'Rubik', sans-serif;
     scroll-behavior: smooth;
     transition: 0.3s;
+    --bs-gutter-x: 0rem !important;
 }
 :root{
     font-size: 16px;
@@ -30,6 +31,9 @@ ul li a, label{
     align-items: center;
 }
 
+.categories div label {
+    cursor: pointer;
+}
 
 nav{    
     display: flex;
@@ -147,6 +151,15 @@ footer {
     flex-wrap: wrap;
     padding: 1rem;
     margin-top: auto;
+}
+footer a {
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+footer a:hover {
+    color: white;
+
 }
 .socials{
     display: flex;
@@ -297,6 +310,7 @@ fieldset{
     justify-content: center;  
 }
 .card {
+
     width: 14rem !important;
     height:fit-content;
     display: flex;
@@ -304,6 +318,7 @@ fieldset{
     align-items: center;
     justify-content: flex-start;
     text-align: center;
+    border: none !important;
     padding: 0 1.5rem 1.5rem 1.5rem !important;
     
 }
@@ -377,9 +392,6 @@ h1:hover{
 }
 
 
-.card h4 {
-    padding: 0 0 .5rem 0 !important;
-}
 
 footer h4 {
     margin-bottom: 0 !important;
@@ -489,9 +501,13 @@ p{
     align-items: center;
     gap: 1rem;
     padding: 3rem;
+    margin: 0 !important;
     background-color: white;
 }
-
+.show-events-container h6{
+    max-width: 30rem;
+    padding: 0 3rem 0 3rem;
+}
 
 @media (max-width:576px){
     h1{
@@ -522,12 +538,15 @@ p{
     footer h4 {
         margin-top: 1rem !important;
     }
+    
 }
 @media (max-width:767px){
     .search-input{
         margin-top: 1rem;
     }
-    
+    .search-input{
+        margin-top: 2rem !important;
+    }
 }
 @media (max-width:991px){
     nav ul{

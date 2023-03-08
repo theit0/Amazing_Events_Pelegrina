@@ -5,6 +5,8 @@ const $templateCard = document.querySelector(".templateCard").content,
       
 console.log($checkboxes);
 
+
+// Mostrar todos los eventos
 const $showAllButton = document.querySelector(".show-events-button");
 
 $showAllButton.addEventListener('click',()=>{
@@ -26,7 +28,7 @@ $showAllButton.addEventListener('click',()=>{
 });
     
 
-
+//Filtrar eventos
 function filtrarEventos () {
     const $arrayOfNodes = Array.from($checkboxes);
     const $categoriesChecked = $arrayOfNodes.filter((checkbox)=>checkbox.checked);
@@ -45,13 +47,13 @@ function filtrarEventos () {
         $templateCard.querySelector("p").textContent = elem.description;
         $templateCard.querySelector("h6").textContent = `Price: $${elem.price}`;
     
-        
         let $clone = document.importNode($templateCard,true);
         $fragment.append($clone);
     });
     $cards.append($fragment);
-    console.log($cards.querySelectorAll(".card"))
+    console.log($cards.querySelectorAll(".card"));
 }
+
 
 for (let i of $checkboxes) {
     i.addEventListener('change',()=>{
@@ -64,3 +66,5 @@ for (let i of $checkboxes) {
     })
     console.log(i);
 }
+
+
