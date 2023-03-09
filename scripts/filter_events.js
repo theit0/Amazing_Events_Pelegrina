@@ -21,7 +21,7 @@ const $checkboxes = document.querySelectorAll(".categories input[type='checkbox'
 
 
 const $searchInput = document.querySelector("input[type='search']"),
-      $searchIcon = document.querySelector(".search-icon");
+      $searchButton = document.querySelector(".search-button");
 
 //Filtrar eventos mediante los checkboxes
 function filtrarEventos () {
@@ -46,15 +46,15 @@ function filtrarEventos () {
     });
 
     $cards.append($fragment);
-
 }
 
-$searchIcon.addEventListener('click',()=>{
+$searchButton.addEventListener('click',(event)=>{
     const $cardContainer = document.querySelectorAll(".card");
     for (let i of $cardContainer) {
         $cards.removeChild(i)
     }
     filtrarEventos();
     $searchInput.value = "";
+    event.preventDefault();
 })
 

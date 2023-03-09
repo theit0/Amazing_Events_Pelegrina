@@ -3,7 +3,8 @@ const $templateCard = document.querySelector(".templateCard").content,
       $fragment = document.createDocumentFragment();
 
 // Mostrar todos los eventos
-const $showAllButton = document.querySelector(".show-events-button");
+const $showAllButton = document.querySelector(".show-events-button"),
+     $deleteAllButton = document.querySelector(".delete-events-button");
 
 $showAllButton.addEventListener('click',()=>{
     const $cardContainer = document.querySelectorAll(".card");
@@ -25,5 +26,12 @@ $showAllButton.addEventListener('click',()=>{
     });
     $cards.append($fragment);
 
+});
+
+$deleteAllButton.addEventListener('click',()=>{
+    const $card = document.querySelectorAll(".card"); 
+    $card.forEach((elem)=>{
+        $cards.removeChild(elem);
+    })
 });
     
