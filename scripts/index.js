@@ -6,6 +6,11 @@ const $templateCard = document.querySelector(".templateCard").content,
 const $showAllButton = document.querySelector(".show-events-button");
 
 $showAllButton.addEventListener('click',()=>{
+    const $cardContainer = document.querySelectorAll(".card");
+    for (let i of $cardContainer) {
+        $cards.removeChild(i)
+    }
+
     data.events.forEach((elem)=>{
         $templateCard.querySelector("img").setAttribute("src",elem.image);
         $templateCard.querySelector("img").setAttribute("alt",elem.name);
@@ -19,6 +24,6 @@ $showAllButton.addEventListener('click',()=>{
         $fragment.append($clone);
     });
     $cards.append($fragment);
-    $cards.removeChild($cards.querySelector(".show-events-container"));
+
 });
     
