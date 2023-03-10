@@ -24,7 +24,7 @@ const $searchInput = document.querySelector("input[type='search']"),
       $searchButton = document.querySelector(".search-button");
 
 //Filtrar eventos mediante los checkboxes
-function filtrarEventos () {
+function filterEvents () {
     const $arrayOfNodes = Array.from($checkboxes);
     const $categoriesChecked = $arrayOfNodes.filter((checkbox)=>checkbox.checked);
     const $categoriesNames = $categoriesChecked.map((category)=> category.name);
@@ -36,6 +36,7 @@ function filtrarEventos () {
     eventsFiltered.forEach((elem)=>{
         $templateCard.querySelector("img").setAttribute("src",elem.image);
         $templateCard.querySelector("img").setAttribute("alt",elem.name);
+        $templateCard.querySelector("a").setAttribute("href",`./details.html?id=${elem._id}`);
         $templateCard.querySelector("h4").textContent = elem.name;
         $templateCard.querySelector("p").textContent = elem.description;
         $templateCard.querySelector("h6").textContent = `Price: $${elem.price}`;
@@ -53,7 +54,7 @@ $searchButton.addEventListener('click',(event)=>{
     for (let i of $cardContainer) {
         $cards.removeChild(i)
     }
-    filtrarEventos();
+    filterEvents();
     $searchInput.value = "";
     event.preventDefault();
 })

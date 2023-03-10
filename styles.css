@@ -16,7 +16,7 @@
     --dark: #28292c;
 }
 
-p,label,td,th,.carrousel-card h6, .show-events-container h6{
+p,label,td,th,.carrousel-card h6, .show-events-container h6,.details-items div h6{
     color: #6e6e6e;
 } 
 
@@ -141,7 +141,9 @@ ul li a:hover{
     color: white !important;
 }
 
-
+#search {
+    padding-bottom: 1rem;
+}
 
 
 footer {
@@ -159,7 +161,6 @@ footer a {
 }
 footer a:hover {
     color: white;
-
 }
 .socials{
     display: flex;
@@ -213,9 +214,11 @@ button, .submit{
 }
 
 main {
+  
     background-color: #EAEAEA;
-    padding:0 0 2rem 0 !important;
 }
+
+
 
 fieldset{
     display: flex;
@@ -264,6 +267,9 @@ fieldset{
 
 .view-events{
     width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: .2rem;
     padding: .3rem 1rem .3rem 1rem;
     border-radius: .3rem;
     background-color: #0d6efd;
@@ -438,41 +444,51 @@ input[type="checkbox"]{
     height: 1rem;
 }
 
-.details{
-    margin: 2rem;
-    width: 22rem;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    border-radius: .3rem;
-    background-color: white;
-    gap: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-    padding-bottom: 2rem;
-}
-.details div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center; 
-    padding: 0 2rem 0 2rem;
-}
-h6,.details div p {
-    margin: 0 !important;
-}
+
+
 p{
     line-height: normal;
 }
-.details-title{
+
+
+.details{
+    display: flex;
+    height:53.56rem;
+}
+
+.details-title img {
+    width: 100%;
+    height:53.56rem;
+    object-fit: cover;
+}
+
+.details-items{
+    text-align: center;
+    padding: 2rem;
+    max-width: 60rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background-color: white;
+}
+.details-items div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 15rem;
     flex-direction: column;
 }
 
-.details div img {
-    width: 22rem;
-    height: 18rem;
-    object-fit: cover;
+.details-items div img{
+    width: 10rem;
+    height: 10rem;
+}
+
+.details-name{
+    padding: 1rem;
+    width: 50rem !important;
 }
 
 .main-container{
@@ -482,6 +498,10 @@ p{
 
 .bi-caret-left-fill,.bi-caret-right-fill{
     color: black;
+}
+
+main{
+    padding-bottom: 1rem;
 }
 
 .contact-main{

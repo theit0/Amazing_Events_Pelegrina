@@ -6,19 +6,23 @@ const $templateCard = document.querySelector(".templateCard").content,
 const $showAllButton = document.querySelector(".show-events-button"),
      $deleteAllButton = document.querySelector(".delete-events-button");
 
+
+
 $showAllButton.addEventListener('click',()=>{
     const $cardContainer = document.querySelectorAll(".card");
     for (let i of $cardContainer) {
         $cards.removeChild(i)
     }
 
-    data.events.forEach((elem)=>{
-        $templateCard.querySelector("img").setAttribute("src",elem.image);
-        $templateCard.querySelector("img").setAttribute("alt",elem.name);
-        $templateCard.querySelector("h4").textContent = elem.name;
-        $templateCard.querySelector("p").textContent = elem.description;
-        $templateCard.querySelector("h6").textContent = `Price: $${elem.price}`;
-    
+    data.events.forEach((event)=>{
+        $templateCard.querySelector("img").setAttribute("src",event.image);
+        $templateCard.querySelector("a").setAttribute("href",`./details.html?id=${event._id}`);
+        $templateCard.querySelector("img").setAttribute("alt",event.name);
+        $templateCard.querySelector("h4").textContent = event.name;
+        $templateCard.querySelector("p").textContent = event.description;
+        $templateCard.querySelector("h6").textContent = `Price: $${event.price}`;
+        
+
         let $clone = document.importNode($templateCard,true);
         //Uso de fragment para no tener que agregar un elemento por vez
         // y de esta forma mejor el rendimiento de la página
@@ -35,3 +39,4 @@ $deleteAllButton.addEventListener('click',()=>{
     })
 });
     
+
