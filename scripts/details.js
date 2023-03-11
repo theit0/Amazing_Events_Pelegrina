@@ -27,7 +27,7 @@ $section.innerHTML = `
             <h6>${evento.description}</h6>
         </div>
         <div>
-            <img src="https://img.freepik.com/free-vector/time-management-concept-illustration_114360-1013.jpg?w=1380&t=st=1678407104~exp=1678407704~hmac=bbc308054e9990bc33930bab1edf45c9bdc8f3eb62d2a149bb5d137d2a608cff">
+            <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-selector-fecha_114360-4495.jpg?w=826&t=st=1678450812~exp=1678451412~hmac=ea3163cc7561e054ea66ad3fa4fd58c8c0200fed917538df1e0b117c0d6fbd3a">
             <h3>Date</h3>
             <h6>${evento.date}</h6>
         </div>
