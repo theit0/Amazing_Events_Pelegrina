@@ -1,7 +1,7 @@
-const $toggleSwitch = document.querySelectorAll('.input-switch'),
-      $main = document.querySelector("main"),
-      $svg = document.querySelectorAll("svg"),
-      $table = document.querySelector("table");
+const $toggleSwitch = document.querySelectorAll('.input-switch');
+const $main = document.querySelector("main");
+const $svg = document.querySelectorAll("svg");
+const $table = document.querySelector("table");
 
 
 $toggleSwitch.forEach(element => {

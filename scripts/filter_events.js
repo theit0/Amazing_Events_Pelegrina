@@ -20,8 +20,8 @@ categories.forEach((category)=>{
 const $checkboxes = document.querySelectorAll(".categories input[type='checkbox']");
 
 
-const $searchInput = document.querySelector("input[type='search']"),
-      $searchButton = document.querySelector(".search-button");
+const $searchInput = document.querySelector("input[type='search']"); 
+const $searchButton = document.querySelector(".search-button");
 
 //Filtrar eventos mediante los checkboxes
 function filterEvents () {

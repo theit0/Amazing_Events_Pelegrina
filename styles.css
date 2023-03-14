@@ -324,17 +324,15 @@ fieldset{
     justify-content: center;  
 }
 .card {
-
     width: 14rem !important;
-    height:fit-content;
+    height: 30rem !important;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     text-align: center;
     border: none !important;
-    padding: 0 1.5rem 1.5rem 1.5rem !important;
-    
+    padding: 0 1rem 1rem 1rem !important;
 }
 figure {
     overflow: hidden;
@@ -342,7 +340,7 @@ figure {
 
 .card img {
     width: 14rem;
-    height: 14rem;
+    height: 23rem;
     object-fit:cover;
     border-top-right-radius: .3rem;
     border-top-left-radius: .3rem;
@@ -362,7 +360,11 @@ p{
 .price {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
+}
+.title-price{
+    margin: 0 !important;
 }
 
 .contact-form form{
@@ -374,8 +376,20 @@ p{
 }
 
 .contact-form form input{
+    padding-left: .5rem;
     margin-bottom: 1rem;
+    width: 25rem;
 }
+.contact-form form input[name="mesagge"]{
+    height: 10rem;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+    width: 25rem;
+}
+
 
 
 h1{
@@ -394,16 +408,11 @@ h1:hover{
 
 .bi-caret-left-fill,.bi-caret-right-fill{
     margin-bottom: .5rem;
-    transition: 0.5s all ease;
-    transform: rotateX(40deg) scale(1.2);
-    perspective: 900px;
     fill: black;
     width: 3rem !important;
     height: 3rem !important;
 }
-.bi-caret-left-fill:hover,.bi-caret-right-fill:hover{
-    transform: rotateX(-20deg) scale(1) ;
-}
+
 
 
 

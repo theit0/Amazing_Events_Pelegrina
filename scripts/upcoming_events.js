@@ -1,6 +1,6 @@
-const $templateCard = document.querySelector(".templateCard").content,
-      $cards = document.querySelector(".cards"),
-      $fragment = document.createDocumentFragment();
+const $templateCard = document.querySelector(".templateCard").content;
+const $cards = document.querySelector(".cards");
+const $fragment = document.createDocumentFragment();
 
 let currentDate = new Date(data.currentDate.split('-').join('/'));
 
