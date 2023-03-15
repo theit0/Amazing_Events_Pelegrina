@@ -30,7 +30,7 @@ function filterEvents () {
     const $categoriesNames = $categoriesChecked.map((category)=> category.name);
 
     const eventsFiltered = data.events.filter((event)=>{
-        return $categoriesNames.includes(event.category) || (event.name.toLowerCase() === $searchInput.value.toLowerCase()); 
+        return $categoriesNames.includes(event.category) || (event.name.toLowerCase().includes($searchInput.value.toLowerCase()) && $searchInput.value.toLowerCase() !==""); 
     });
 
     eventsFiltered.forEach((elem)=>{
@@ -58,4 +58,3 @@ $searchButton.addEventListener('click',(event)=>{
     $searchInput.value = "";
     event.preventDefault();
 })
-
