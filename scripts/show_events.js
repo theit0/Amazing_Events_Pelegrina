@@ -2,15 +2,13 @@
 const $showAllButton = document.querySelector(".show-events-button");
 const $deleteAllButton = document.querySelector(".delete-events-button");
 
-
-
 $showAllButton.addEventListener('click',()=>{
     const $cardContainer = document.querySelectorAll(".card");
     for (let i of $cardContainer) {
         $cards.removeChild(i)
     }
 
-    data.events.forEach((event)=>{
+    events.forEach((event)=>{
         $templateCard.querySelector("img").setAttribute("src",event.image);
         $templateCard.querySelector("a").setAttribute("href",`./details.html?id=${event._id}`);
         $templateCard.querySelector("img").setAttribute("alt",event.name);

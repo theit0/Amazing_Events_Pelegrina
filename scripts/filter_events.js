@@ -1,6 +1,7 @@
+
 // Crear dinamicamente los checkboxes
-const $categories = document.querySelector(".categories"),
-      categories = ['Food Fair','Museum','Costume Party','Race','Book Exchange','Cinema'];
+const $categories = document.querySelector(".categories")
+const categories = ['Food Fair','Museum','Costume Party','Race','Book Exchange','Cinema'];
 
 categories.forEach((category)=>{
     let $input = document.createElement("input");
@@ -18,19 +19,18 @@ categories.forEach((category)=>{
 })
 
 const $checkboxes = document.querySelectorAll(".categories input[type='checkbox']");
-
-
 const $searchInput = document.querySelector("input[type='search']"); 
-const $searchButton = document.querySelector(".search-button");
 
-//Filtrar eventos mediante los checkboxes
+//Filtrar los eventos
 function filterEvents () {
     const $arrayOfNodes = Array.from($checkboxes);
     const $categoriesChecked = $arrayOfNodes.filter((checkbox)=>checkbox.checked);
     const $categoriesNames = $categoriesChecked.map((category)=> category.name);
 
-    const eventsFiltered = data.events.filter((event)=>{
-        return $categoriesNames.includes(event.category) || (event.name.toLowerCase().includes($searchInput.value.toLowerCase()) && $searchInput.value.toLowerCase() !==""); 
+    const eventsFiltered = events.filter((event)=>{
+        return $categoriesNames.includes(event.category) || 
+                (event.name.toLowerCase().includes($searchInput.value.toLowerCase()) && 
+                $searchInput.value.toLowerCase() !== ""); 
     });
 
     eventsFiltered.forEach((elem)=>{
@@ -41,7 +41,6 @@ function filterEvents () {
         $templateCard.querySelector("p").textContent = elem.description;
         $templateCard.querySelector("h6").textContent = `Price: $${elem.price}`;
     
-
         let $clone = document.importNode($templateCard,true);
         $fragment.append($clone);
     });
@@ -49,12 +48,21 @@ function filterEvents () {
     $cards.append($fragment);
 }
 
-$searchButton.addEventListener('click',(event)=>{
+//Filtrar mediante texto
+$searchInput.addEventListener('input',()=>{
     const $cardContainer = document.querySelectorAll(".card");
     for (let i of $cardContainer) {
         $cards.removeChild(i)
     }
     filterEvents();
-    $searchInput.value = "";
-    event.preventDefault();
+})
+//Filtrar mediante categorias
+$checkboxes.forEach((checkbox)=>{
+    checkbox.addEventListener('change',()=>{
+        const $cardContainer = document.querySelectorAll(".card");
+        for (let i of $cardContainer) {
+            $cards.removeChild(i)
+        }
+        filterEvents();
+    })    
 })

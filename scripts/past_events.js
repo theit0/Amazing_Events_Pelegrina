@@ -4,11 +4,11 @@ const $fragment = document.createDocumentFragment();
 
 let currentDate = new Date(data.currentDate.split('-').join('/'));
 
-const filteredEvents = data.events.filter((evento)=>{
+const events = data.events.filter((evento)=>{
   return (new Date(evento.date)) < currentDate;
 });
 
-filteredEvents.forEach((elem)=>{
+events.forEach((elem)=>{
     $templateCard.querySelector("img").setAttribute("src",elem.image);
     $templateCard.querySelector("img").setAttribute("alt",elem.name);
     $templateCard.querySelector("a").setAttribute("href",`./details.html?id=${elem._id}`);
