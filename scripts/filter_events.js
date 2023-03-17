@@ -1,7 +1,6 @@
-
 // Crear dinamicamente los checkboxes
 const $categories = document.querySelector(".categories")
-const categories = ['Food Fair','Museum','Costume Party','Race','Book Exchange','Cinema'];
+const categories = ['Food','Museum','Concert','Race','Books','Cinema','Party'];
 
 categories.forEach((category)=>{
     let $input = document.createElement("input");
@@ -12,8 +11,6 @@ categories.forEach((category)=>{
     $label.setAttribute("for",category);
     $label.textContent = category;
     let $div = document.createElement("div");
-    console.log($input);
-    console.log($label)
     $div.append($input,$label);
     $categories.appendChild($div);
 })
@@ -21,11 +18,14 @@ categories.forEach((category)=>{
 const $checkboxes = document.querySelectorAll(".categories input[type='checkbox']");
 const $searchInput = document.querySelector("input[type='search']"); 
 
-//Filtrar los eventos
-function filterEvents () {
+
+
+const filterEvents = ()=>{
     const $arrayOfNodes = Array.from($checkboxes);
     const $categoriesChecked = $arrayOfNodes.filter((checkbox)=>checkbox.checked);
     const $categoriesNames = $categoriesChecked.map((category)=> category.name);
+
+    const events = window.APIdata.events;
 
     const eventsFiltered = events.filter((event)=>{
         return $categoriesNames.includes(event.category) || 
