@@ -18,8 +18,7 @@ categories.forEach((category)=>{
 const $checkboxes = document.querySelectorAll(".categories input[type='checkbox']");
 const $searchInput = document.querySelector("input[type='search']"); 
 
-
-
+//Filtrar eventos
 const filterEvents = ()=>{
     const $arrayOfNodes = Array.from($checkboxes);
     const $categoriesChecked = $arrayOfNodes.filter((checkbox)=>checkbox.checked);

@@ -1,7 +1,7 @@
 let API = "https://mindhub-xj03.onrender.com/api/amazing";
 
 // async-await version
-/* async function pullData(){
+async function pullData(){
     try {
         const response = await fetch(API)
         const data = await response.json();
@@ -12,8 +12,8 @@ let API = "https://mindhub-xj03.onrender.com/api/amazing";
     }
 }
 pullData(); 
- */
-function pullData(){
+ 
+/* function pullData(){
     return fetch(API)
     .then(response => response.json())
     .then(data => {
@@ -24,4 +24,4 @@ function pullData(){
         console.error('Ha ocurrido un error', error);
     });    
 }
-pullData(); 
+pullData();  */

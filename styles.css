@@ -498,6 +498,7 @@ p{
 }
 
 .details-name{
+    position: relative;
     padding: 1rem;
     width: 50rem !important;
 }
@@ -543,6 +544,10 @@ main{
 .show-events-container h6{
     max-width: 30rem;
     padding: 0 3rem 0 3rem;
+}
+
+#back-link{
+    margin-top: 1rem;
 }
 
 @media (max-width:576px){

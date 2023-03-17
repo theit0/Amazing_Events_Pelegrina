@@ -2,7 +2,7 @@
 const $showAllButton = document.querySelector(".show-events-button");
 const $deleteAllButton = document.querySelector(".delete-events-button");
 
-
+//Agregar todos los eventos
 pullData().then(data=>{
     $showAllButton.addEventListener('click',()=>{
         const $cardContainer = document.querySelectorAll(".card");
@@ -12,7 +12,6 @@ pullData().then(data=>{
         printCard(data.events);
     });
 })
-
 
 //Borrar todos los elementos
 $deleteAllButton.addEventListener('click',()=>{
