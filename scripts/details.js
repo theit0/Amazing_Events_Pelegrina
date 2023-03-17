@@ -10,7 +10,6 @@ fetch('https://mindhub-xj03.onrender.com/api/amazing')
     
     let evento = "";
     
-    // Trate de usar find pero no me funciono
     const evento2 = data.events.forEach((event)=>{
         if(event._id == id){
             evento = event;
@@ -20,7 +19,6 @@ fetch('https://mindhub-xj03.onrender.com/api/amazing')
     const $section = document.querySelector("section");
     
     $section.innerHTML = `
-        
         <div class="details-title col-md-12 col-lg-6 ">
             <img src="${evento.image}" alt="${evento.name}">
         </div>
