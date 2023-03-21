@@ -8,7 +8,7 @@ const events = pullData().then((data)=>{
   const events = data.events.filter((evento)=>{
     return (new Date(evento.date)) < currentDate;
   });
-  
+  window.APIdata = events;
   printCard(events);
 });
 

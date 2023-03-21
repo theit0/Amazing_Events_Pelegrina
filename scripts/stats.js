@@ -3,17 +3,14 @@ pullData().then(data=>{
     let currentDate = new Date(data.currentDate);
 
     //Obtener past events
-    const pastEvents = data.events.filter((evento)=>{
-        return (new Date(evento.date)) < currentDate;
+    const pastEvents = data.events.filter((event)=>{
+        return (new Date(event.date)) < currentDate;
     });
-    console.log(pastEvents)
     
     //Obtener upcoming events
-    const upcomingEvents = data.events.filter((evento)=>{
-        return (new Date(evento.date)) > currentDate;
+    const upcomingEvents = data.events.filter((event)=>{
+        return (new Date(event.date)) > currentDate;
     });
-    console.log(upcomingEvents)
-        
 
     //Obteniendo los maximos y minimos porcentajes de los eventos pasados
     let maxAssistance = {
@@ -32,15 +29,17 @@ pullData().then(data=>{
             };
         } else if (percentage < minAssistance.percentage) {
             minAssistance = {
-              percentage: percentage,
-              event: event
+              percentage,
+              event
             };
         }
-    }
+    } 
 
     //Evento pasado con la mayor capacidad
     const eventWithLargerCapacity = pastEvents.reduce((prev, curr) => {
-        return (curr.capacity > prev.capacity) ? curr : prev;
+        return (curr.capacity > prev.capacity) 
+                ? curr 
+                : prev;
     })
 
     //Obtengo el arreglo de categorias
@@ -50,19 +49,18 @@ pullData().then(data=>{
     // Crear y agregar las filas de categorias (tuve que hacer dos constantes por el fallo de la API
     // la cual tiene distintos atributos, pero si no hubiera usado una sola funcion y usarla para past y upcoming)
     const pastTableRows = categoriesPast.map(category => {
+        const eventsInCategory = pastEvents.filter(event => event.category === category);
+        const totalRevenue = eventsInCategory.reduce((total, event) => total + event.price * event.assistance, 0);
+        const averageAttendance = eventsInCategory.reduce((total, event) => total + event.assistance / event.capacity, 0) / eventsInCategory.length * 100;
         
-            const eventsInCategory = pastEvents.filter(event => event.category === category);
-            const totalRevenue = eventsInCategory.reduce((total, event) => total + event.price * event.assistance, 0);
-            const averageAttendance = eventsInCategory.reduce((total, event) => total + event.assistance / event.capacity, 0) / eventsInCategory.length * 100;
-          
-            return `
-              <tr>
-                <td>${category}</td>
-                <td>$${totalRevenue}</td>
-                <td>${averageAttendance.toFixed(2)}%</td>
-              </tr>
-            `;
-        });
+        return `
+            <tr>
+            <td>${category}</td>
+            <td>$${totalRevenue}</td>
+            <td>${averageAttendance.toFixed(2)}%</td>
+            </tr>
+        `;
+    });
     const upcomingTableRows = categoriesUpcoming.map(category => {
         const eventsInCategory = upcomingEvents.filter(event => event.category === category);
         const totalRevenue = eventsInCategory.reduce((total, event) => total + event.price * event.estimate, 0);
@@ -123,7 +121,6 @@ pullData().then(data=>{
         </tr>
         ${pastTableRows.join('')}
     `
-    
 })
 
 

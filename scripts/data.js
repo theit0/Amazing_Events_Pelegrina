@@ -5,7 +5,6 @@ async function pullData(){
     try {
         const response = await fetch(API)
         const data = await response.json();
-        window.APIdata = data;
         return data;
     } catch (error) {
         console.log(error)

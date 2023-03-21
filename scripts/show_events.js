@@ -6,9 +6,11 @@ const $deleteAllButton = document.querySelector(".delete-events-button");
 pullData().then(data=>{
     $showAllButton.addEventListener('click',()=>{
         const $cardContainer = document.querySelectorAll(".card");
+        const $errorContainer = document.querySelector(".error-container")
         for (let i of $cardContainer) {
             $cards.removeChild(i)
         }
+        $errorContainer.style.display = 'none';
         printCard(data.events);
     });
 })

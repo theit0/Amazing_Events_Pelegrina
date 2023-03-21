@@ -17,21 +17,32 @@ categories.forEach((category)=>{
 
 const $checkboxes = document.querySelectorAll(".categories input[type='checkbox']");
 const $searchInput = document.querySelector("input[type='search']"); 
+const $errorContainer = document.querySelector(".error-container")
+
+$errorContainer.style.display = 'none';
 
 //Filtrar eventos
 const filterEvents = ()=>{
+    $errorContainer.style.display = 'none';
     const $arrayOfNodes = Array.from($checkboxes);
     const $categoriesChecked = $arrayOfNodes.filter((checkbox)=>checkbox.checked);
     const $categoriesNames = $categoriesChecked.map((category)=> category.name);
 
-    const events = window.APIdata.events;
+    const events = window.APIdata;
 
     const eventsFiltered = events.filter((event)=>{
-        return $categoriesNames.includes(event.category) || 
+        return  $categoriesNames.includes(event.category) && 
                 (event.name.toLowerCase().includes($searchInput.value.toLowerCase()) && 
                 $searchInput.value.toLowerCase() !== ""); 
     });
 
+    if(eventsFiltered.length===0){
+        $errorContainer.style.display = 'flex';
+    }
+    if ($categoriesChecked.length===0 && eventsFiltered.length===0){
+        $errorContainer.style.display = 'none';
+        printCard(events)    
+    }
     printCard(eventsFiltered);
 }
 
