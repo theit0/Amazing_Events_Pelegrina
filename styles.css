@@ -554,6 +554,7 @@ main{
     justify-content: center;
     align-items: center;
     margin: 0 !important;
+    padding: 3rem;
     background-color: white;
 }
 

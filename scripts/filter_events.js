@@ -31,19 +31,27 @@ const filterEvents = ()=>{
     const events = window.APIdata;
 
     const eventsFiltered = events.filter((event)=>{
-        return  $categoriesNames.includes(event.category) && 
-                (event.name.toLowerCase().includes($searchInput.value.toLowerCase()) && 
-                $searchInput.value.toLowerCase() !== ""); 
+        return  $categoriesNames.includes(event.category);
     });
 
-    if(eventsFiltered.length===0){
+    if(eventsFiltered.length ===0){
+        events.forEach((event)=>{
+            eventsFiltered.push(event);
+        })
+    }
+    const eventsFilteredByText = eventsFiltered.filter((event)=>{
+        return event.name.toLowerCase().includes($searchInput.value.toLowerCase());
+    })
+
+    if(eventsFilteredByText.length===0){
         $errorContainer.style.display = 'flex';
     }
-    if ($categoriesChecked.length===0 && eventsFiltered.length===0){
+    
+    if ($categoriesChecked.length===0 && eventsFilteredByText.length===0){
         $errorContainer.style.display = 'none';
         printCard(events)    
     }
-    printCard(eventsFiltered);
+    printCard(eventsFilteredByText);
 }
 
 //Filtrar mediante texto
