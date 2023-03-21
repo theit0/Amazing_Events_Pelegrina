@@ -2,15 +2,12 @@ pullData().then(data=>{
     //Obtener fecha actual
     let currentDate = new Date(data.currentDate);
 
-    //Obtener past events
-    const pastEvents = data.events.filter((event)=>{
-        return (new Date(event.date)) < currentDate;
-    });
-    
-    //Obtener upcoming events
-    const upcomingEvents = data.events.filter((event)=>{
-        return (new Date(event.date)) > currentDate;
-    });
+    function filterEventsByDate(events, comparator) {
+        return events.filter(event => comparator(new Date(event.date)));
+      }
+      
+    const pastEvents = filterEventsByDate(data.events, event => event < currentDate);
+    const upcomingEvents = filterEventsByDate(data.events, event => event > currentDate);
 
     //Obteniendo los maximos y minimos porcentajes de los eventos pasados
     let maxAssistance = {
@@ -37,35 +34,19 @@ pullData().then(data=>{
 
     //Evento pasado con la mayor capacidad
     const eventWithLargerCapacity = pastEvents.reduce((prev, curr) => {
-        return (curr.capacity > prev.capacity) 
-                ? curr 
-                : prev;
+        return (curr.capacity > prev.capacity) ? curr : prev;
     })
 
     //Obtengo el arreglo de categorias
-    const categoriesPast = [...new Set(pastEvents.map(event => event.category))];
-    const categoriesUpcoming = [...new Set(upcomingEvents.map(event => event.category))];
+    let categoriesPast = [...new Set(pastEvents.map(event => event.category))];
+    let categoriesUpcoming = [...new Set(upcomingEvents.map(event => event.category))];
 
     // Crear y agregar las filas de categorias (tuve que hacer dos constantes por el fallo de la API
     // la cual tiene distintos atributos, pero si no hubiera usado una sola funcion y usarla para past y upcoming)
-    const pastTableRows = categoriesPast.map(category => {
-        const eventsInCategory = pastEvents.filter(event => event.category === category);
-        const totalRevenue = eventsInCategory.reduce((total, event) => total + event.price * event.assistance, 0);
-        const averageAttendance = eventsInCategory.reduce((total, event) => total + event.assistance / event.capacity, 0) / eventsInCategory.length * 100;
-        
-        return `
-            <tr>
-            <td>${category}</td>
-            <td>$${totalRevenue}</td>
-            <td>${averageAttendance.toFixed(2)}%</td>
-            </tr>
-        `;
-    });
-    const upcomingTableRows = categoriesUpcoming.map(category => {
-        const eventsInCategory = upcomingEvents.filter(event => event.category === category);
-        const totalRevenue = eventsInCategory.reduce((total, event) => total + event.price * event.estimate, 0);
-        const averageAttendance = eventsInCategory.reduce((total, event) => total + event.estimate / event.capacity, 0) / eventsInCategory.length * 100;
-      
+    function filterEventsByCategory(events, category) {
+        return events.filter(event => event.category === category);
+    }      
+    function generateTableRow(category, totalRevenue, averageAttendance) {
         return `
           <tr>
             <td>${category}</td>
@@ -73,6 +54,20 @@ pullData().then(data=>{
             <td>${averageAttendance.toFixed(2)}%</td>
           </tr>
         `;
+    }
+    const pastTableRows = categoriesPast.map(category => {
+        eventsInCategory = filterEventsByCategory(pastEvents,category)
+        const totalRevenue = eventsInCategory.reduce((total, event) => total + event.price * event.assistance, 0);
+        const averageAttendance = eventsInCategory.reduce((total, event) => total + event.assistance / event.capacity, 0) / eventsInCategory.length * 100;
+        
+        return generateTableRow(category,totalRevenue,averageAttendance)
+    });
+    const upcomingTableRows = categoriesUpcoming.map(category => {
+        eventsInCategory= filterEventsByCategory(upcomingEvents,category)
+        const totalRevenue = eventsInCategory.reduce((total, event) => total + event.price * event.estimate, 0);
+        const averageAttendance = eventsInCategory.reduce((total, event) => total + event.estimate / event.capacity, 0) / eventsInCategory.length * 100;
+      
+        return generateTableRow(category,totalRevenue,averageAttendance)
     });
    
 
