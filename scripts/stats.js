@@ -4,7 +4,7 @@ pullData().then(data=>{
 
     function filterEventsByDate(events, comparator) {
         return events.filter(event => comparator(new Date(event.date)));
-      }
+    }
       
     const pastEvents = filterEventsByDate(data.events, event => event < currentDate);
     const upcomingEvents = filterEventsByDate(data.events, event => event > currentDate);
@@ -118,4 +118,22 @@ pullData().then(data=>{
     `
 })
 
+const { createApp } = Vue
+createApp({
+    data(){
+        return {
+        
+        }
+    },
+    methods(){
+        return {
 
+        }
+    },
+    computed(){
+        
+    },
+    created(){
+        
+    },
+}).mount('#app')
