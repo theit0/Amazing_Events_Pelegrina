@@ -1,33 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.cdnfonts.com/css/resist-sans-display');
+/* @import url('https://fonts.cdnfonts.com/css/merchandise'); */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Rubik', sans-serif;
+    scroll-behavior: smooth;
+    transition: 0.3s;
+    --bs-gutter-x: 0rem !important;
 }
 :root{
     font-size: 16px;
+    --light: #d8dbe0;
+    --dark: #28292c;
 }
 
-
-p{
-    color: #555555;
+p,label,td,th,.carrousel-card h6, .show-events-container h6,.details-items div h6{
+    color: #6e6e6e;
 } 
 
 
-nav{
+ul li a, label{
+    font-weight: 500;
+}
+
+.categories div{
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+.categories div label {
+    cursor: pointer;
+}
+
+nav{    
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     height: 5rem;
-    background-color: white;
 }
-
-
 
 .logo{   
     max-height: 3rem;
+}
+
+.logo-white{
+    display: none;
 }
 
 ul{
@@ -40,12 +61,90 @@ ul{
 }
 ul li a{
     text-decoration: none;
-    color: #555555 ;
+    color: #6e6e6e;
     transition: .2s;
 }
+
+
+
+
 ul li a:hover{
-    color: black;
+    color:#555555;
 }
+
+.dark-mode ul li a:hover{
+    color: white;
+}
+
+
+.toggle-switch {
+    position: relative;
+    width: 100px;
+    margin-bottom:1.6rem;
+}
+
+.label-switch {
+    position: absolute;
+    width: 50px;
+    height: 25px;
+    background-color: var(--dark);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.input-switch {
+    position: absolute;
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    top: 3.25px;
+    left: 4px;
+    width: 18.75px;
+    height: 18.75px;
+    border-radius: 50%;
+    box-shadow: inset 7px -1px 0px 0px var(--light);
+    background-color: var(--dark);
+    transition: 0.3s;
+}
+
+
+.input-switch:checked ~ .slider {
+    background-color: #25D366;
+}
+
+.input-switch:checked ~ .slider::before {
+    transform: translateX(23.75px);
+    background-color: var(--dark);
+    box-shadow: none;
+}
+
+.dark-main {
+    background-color: #171717;
+}
+
+.dark-card {
+    background-color: #1e1e1e !important;
+}
+
+.white-text {
+    color: white !important;
+}
+
+#search {
+    padding-bottom: 1rem;
+}
+
 
 footer {
     display: flex;
@@ -55,52 +154,71 @@ footer {
     padding: 1rem;
     margin-top: auto;
 }
+footer a {
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+footer a:hover {
+    color: white;
+}
 .socials{
     display: flex;
-    gap: 1rem;
+    gap: .5rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .socials a{
+    padding: .4rem 2rem .4rem 1.6rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 3.5rem;
-    height: 3.5rem;
-    border-radius: 50%;
-    transition: 0.2s ease;
+    gap: .6rem;
+    border-radius: .3rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.socials a:hover, button:hover,.bi-caret-left-fill:hover,.bi-caret-right-fill:hover,.view-events:hover{
+    filter: brightness(80%) ;
 }
 
 .socials a svg{
-    width: 2rem;
-    height: 2rem;
-    fill: #000000;
+    width: 1rem;
+    height: 1rem;
+    color:white;
 }
-.insta:hover{
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+.socials a label{
+    color:white;
 }
-.face:hover{
-    background-color: #4267B2;
-}
-.wpp:hover{
-    background-color: #25D366;
-}
+
+
 
 .dropdown{
     display: none;
 } 
 
 button, .submit{
-    padding: .5rem 1rem .5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+    padding: .3rem 1rem .3rem 1rem;
     color: white;
-    background-color:#d90368;
+    font-weight: 500;
+    background-color:#0d6efd;
     border: none;
     border-radius: .3rem !important;
+    transition: 0.2s;
 }
 
 main {
+  
     background-color: #EAEAEA;
-    padding: 2rem 0 2rem 0;
 }
+
+
 
 fieldset{
     display: flex;
@@ -111,14 +229,68 @@ fieldset{
 }
 
 .carrousel {
+    flex-wrap: wrap;
+    height: 100vh;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    gap: 2rem;
+    padding: 1rem;
     text-align: center;
 }
 .carrousel svg {
-    width: 2rem;
-    height: 2rem;
+    width: 1rem;
+    height: 1rem;
+    color: white;
+}
+
+.carrousel-card{
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3rem;
+    max-width: 40rem !important ;
+    max-height: max-content;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+.carrousel-card h6{
+    padding: 0 1rem 0 1rem;
+}
+
+.carrousel-title{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.view-events{
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+    padding: .3rem 1rem .3rem 1rem;
+    border-radius: .3rem;
+    background-color: #0d6efd;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.view-events:hover{
+    color: white !important;
+}
+
+.search-button{
+    display: flex;
+    gap: .3rem;
+    width: fit-content;
+    margin-top: 1rem;
+    padding: .3rem 1rem .3rem 1rem;
 }
 
 .search-bar{
@@ -131,9 +303,13 @@ fieldset{
 }
 
 .search-input {
-    padding: .2rem .2rem .2rem .5rem;
+    width: 15rem;
+    background-color: white;
+    padding: .2rem;
+    border-radius: .3rem;
 }
-.search-icon{
+
+.search-icon,.socials a label{
     cursor: pointer;
 }
 
@@ -147,30 +323,48 @@ fieldset{
     gap: 1rem;
     justify-content: center;  
 }
-
-.cards div {
-    width: 14rem;
+.card {
+    width: 14rem !important;
+    height: 30rem !important;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    border-radius: .3rem;
-    padding-bottom: 1.2rem;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.08);
+    border: none !important;
+    padding: 0 1rem 1rem 1rem !important;
 }
-.cards div img {
+figure {
+    overflow: hidden;
+}
+
+.card img {
     width: 14rem;
-    height: 12rem;
+    height: 23rem;
     object-fit:cover;
     border-top-right-radius: .3rem;
     border-top-left-radius: .3rem;
+    position: relative;
+    overflow: hidden;
 }
+
+.card img:hover {
+    transform: scale(1.5);
+}
+
+p{
+    padding: 0  0 1rem 0;
+    margin-bottom: 0 !important;
+}
+
 .price {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
+}
+.title-price{
+    margin: 0 !important;
 }
 
 .contact-form form{
@@ -182,15 +376,48 @@ fieldset{
 }
 
 .contact-form form input{
+    padding-left: .5rem;
     margin-bottom: 1rem;
+    width: 25rem;
 }
+.contact-form form input[name="mesagge"]{
+    height: 10rem;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+    width: 25rem;
+}
+
 
 
 h1{
-    font-weight: bold;
+    cursor:default;
+    font-size: 4rem !important;
+    font-family: 'Resist Sans Display', sans-serif;
+    margin-bottom: 0 !important;
+    line-height: 1 !important;
+    width: fit-content;
 }
-h4 {
-    padding-top: 1rem;
+
+h1:hover{
+    text-shadow: cyan 2px 0,
+                red -2px 0
+}
+
+.bi-caret-left-fill,.bi-caret-right-fill{
+    margin-bottom: .5rem;
+    fill: black;
+    width: 3rem !important;
+    height: 3rem !important;
+}
+
+
+
+
+footer h4 {
+    margin-bottom: 0 !important;
 }
 
 table{
@@ -217,45 +444,63 @@ table th{
 input{
     padding: .2rem;
     border: none;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.08);
     border-radius: .3rem;
+}
+input:focus{
+    outline: none;
 }
 
-.details{
-    margin: 2rem;
-    width: 22rem;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    border-radius: .3rem;
-    background-color: white;
-    gap: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-    padding-bottom: 2rem;
+input[type="checkbox"]{
+    accent-color: #d90368 ;
+    width: 1rem;
+    height: 1rem;
 }
-.details div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center; 
-    padding: 0 2rem 0 2rem;
-}
-h6,.details div p {
-    margin: 0 !important;
-}
+
+
+
 p{
     line-height: normal;
 }
-.details-title{
+
+
+.details{
+    display: flex;
+    height:58rem;
+}
+
+.details-title img {
+    width: 100%;
+    height:59rem;
+    object-fit: cover;
+}
+
+.details-items{
+    text-align: center;
+    max-width: 60rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background-color: white;
+}
+.details-items div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 15rem;
     flex-direction: column;
 }
 
-.details div img {
-    width: 22rem;
-    height: 18rem;
-    object-fit: cover;
+.details-items div img{
+    width: 10rem;
+    height: 10rem;
+}
+
+.details-name{
+    position: relative;
+    padding: 1rem;
+    width: 50rem !important;
 }
 
 .main-container{
@@ -263,8 +508,12 @@ p{
     justify-content: center;
 }
 
-.bi-arrow-left,.bi-arrow-right{
-    color: #d90368;
+.bi-caret-left-fill,.bi-caret-right-fill{
+    color: black;
+}
+
+main{
+    padding-bottom: 1rem;
 }
 
 .contact-main{
@@ -276,7 +525,54 @@ p{
 }
 
 
+.show-event-button {
+    width: fit-content !important;
+}
+
+.show-events-container{
+    width: fit-content !important;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 3rem;
+    margin: 0 !important;
+    background-color: white;
+}
+.show-events-container h6{
+    max-width: 30rem;
+    padding: 0 3rem 0 3rem;
+}
+
+.error-container{
+    width: 30rem !important;
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 !important;
+    padding: 3rem;
+    background-color: white;
+}
+
+#back-link{
+    margin-top: 1rem;
+}
+
 @media (max-width:576px){
+    h1{
+        font-size: 3rem !important;
+    }
+    .bi-caret-left-fill,.bi-caret-right-fill{
+        width: 2rem !important;
+        height: 2rem !important;
+    }
+    .carrousel-title{
+        gap: .5rem;
+    }
     footer{
         display: flex;
         flex-direction: column;
@@ -285,10 +581,24 @@ p{
     table td, table th{
         padding: .5rem;
     }
+    .logo{
+        padding-left: 1rem;
+        max-height: 2rem;
+    }
+    .carrousel{
+        background-size: cover;
+    }
+    footer h4 {
+        margin-top: 1rem !important;
+    }
+    
 }
 @media (max-width:767px){
     .search-input{
         margin-top: 1rem;
+    }
+    .search-input{
+        margin-top: 2rem !important;
     }
 }
 @media (max-width:991px){
