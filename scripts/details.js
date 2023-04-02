@@ -34,7 +34,7 @@ fetch('https://mindhub-xj03.onrender.com/api/amazing')
                         </svg>
                         Go Back
                     </button>
-                    <div class="details-name pt-2">
+                    <div class="details-name pt-2 px-3">
                         <h4>${evento.name}</h4>
                         <p>${evento.description}</p>
                     </div>

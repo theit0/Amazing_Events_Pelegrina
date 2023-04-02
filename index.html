@@ -135,7 +135,9 @@
             </div>
 
             <section>
-                <div v-if="loading" class="loader"></div>
+                <div v-if="loading" class="d-flex justify-content-center bg-white">
+                    <div  class="loader"></div>
+                </div>
                 <div v-else class="cards row">
                     <div v-for="event in events" class="card col-12 col-sm-6 col-md-4">
                         <figure>
