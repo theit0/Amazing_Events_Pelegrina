@@ -1,10 +1,12 @@
-pullData().then(data=>{
+fetch('https://mindhub-xj03.onrender.com/api/amazing')
+.then(res=>res.json())
+.then(data=>{
     //Obtener fecha actual
     let currentDate = new Date(data.currentDate);
 
     function filterEventsByDate(events, comparator) {
         return events.filter(event => comparator(new Date(event.date)));
-      }
+    }
       
     const pastEvents = filterEventsByDate(data.events, event => event < currentDate);
     const upcomingEvents = filterEventsByDate(data.events, event => event > currentDate);
@@ -70,12 +72,12 @@ pullData().then(data=>{
         return generateTableRow(category,totalRevenue,averageAttendance)
     });
    
-
+    const $table = document.querySelector("table");
     $table.innerHTML = `
         <tr>
-            <th colspan="3">Events statistics</th>
+            <th colspan="3">Events statistics📊</th>
         </tr>
-        <tr style="font-weight:bold;">
+        <tr class="table-trs">
             <td>Event with the highest percentaje of attendance</td>
             <td>Event with the lowest percentaje of attendance</td>
             <td>Event with larger capacity</td>
@@ -98,18 +100,18 @@ pullData().then(data=>{
             </td>
         </tr>
         <tr>
-            <th colspan="3">Upcoming events statistics by category</th>
+            <th colspan="3">Upcoming events statistics by category📊</th>
         </tr>
-        <tr style="font-weight:bold;">
+        <tr class="table-trs">
             <td>Categories</td>
             <td>Revenues</td>
             <td>Percentaje of attendance</td>
         </tr>
         ${upcomingTableRows.join('')}
         <tr>
-            <th colspan="3">Past events statistic by category</th>
+            <th colspan="3">Past events statistic by category📊</th>
         </tr>
-        <tr style="font-weight:bold;">
+        <tr class="table-trs">
             <td>Categories</td>
             <td>Revenues</td>
             <td>Percentaje of attendance</td>
@@ -118,4 +120,7 @@ pullData().then(data=>{
     `
 })
 
-
+const footer = document.querySelector(".footer-container");
+setTimeout(() => {
+    footer.style.display='flex';
+}, 1000);
