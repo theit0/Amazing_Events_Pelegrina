@@ -48,7 +48,7 @@ createApp({
                 $event.target.textContent = 'Perfect!'
                 $event.target.classList.add('clicked')
                 setInterval(() => {
-                    $event.target.textContent = '💖'
+                    $event.target.textContent = 'Add to favs'
                     $event.target.classList.remove('clicked')  
                 }, 1000);
             } else {
