@@ -83,13 +83,13 @@ main{
 }
 .view-events{
     height: fit-content;
-    width: 100%;
+    flex-grow: 1;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: .2rem;
-    padding: .2rem 0 .2rem 0;
+    padding: .2rem .35rem .2rem .35rem ;
     margin: 1rem 0 1rem 0;
     border: 2px solid #0d6efd;
     border-radius: 5px;
@@ -110,16 +110,14 @@ main{
     display: flex;
     justify-content: center;
     border: 2px solid #ff5144 !important;
-    padding: .2rem 0 .2rem 0;
     background-color: white;
 }
 .fav-heart {
-    height: fit-content;
+    flex-grow: 1;
     transition: 0.2s;
-    width: fit-content;
-    margin-left: 1rem;
     color:#ff5144;
     display: flex;
+    padding: .2rem .35rem .2rem .35rem !important;
     justify-content: center;
     border: 2px solid #ff5144 !important;
     background-color: white;
@@ -392,6 +390,7 @@ figure {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
 }
 
 /* Table */

@@ -29,7 +29,7 @@
                             <input v-model="inputText" type="text" name="search" id="search"class="px-2 " required>
                             <div class="underline"></div>
                             <label for="search">
-                                Search an event 🔎
+                                Search an event
                             </label>
                             {{filterUpcomingEvents}}
                         </div>
@@ -73,12 +73,12 @@
                             <input v-model="inputText" type="text" name="search" id="search2"class="px-2 " required>
                             <div class="underline"></div>
                             <label for="search2">
-                                Search an event 🔎
+                                Search an event
                             </label>
                             {{filterUpcomingEvents}}
                         </div>
                         <button @click="showCategories" type="button" class="filterByCat-button">
-                            Filter by category 🎯
+                            Filter by category
                         </button>
                     </form>
                     <div class="categories">
@@ -92,7 +92,7 @@
             </section>
 
             <div v-if="!upcomingEvents.length && !loading" class="error-container">
-                <h4>Event not found😔</h4>
+                <h4>Event not found</h4>
                 <p>Try searching for another event or selecting from the following categories</p>
             </div>
 
@@ -107,9 +107,9 @@
                         </figure>
                         <div>
                             <h4>{{event.name}}</h4>
-                            <p class="pb-3">{{event.description}}</p>
+                            <p class="py-2">{{event.description}}</p>
                             <article class="price">
-                                <h6 class="title-price">${{event.price}}💸</h6>
+                                <h6 class="title-price">${{event.price}}</h6>
                             </article>
                             <a class="view-events" :href="`./details.html?id=${event._id}`">View</a>
                         </div>

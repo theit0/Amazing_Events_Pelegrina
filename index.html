@@ -29,7 +29,7 @@
                             <input v-model="inputText" type="text" name="search" id="search"class="px-2 " required>
                             <div class="underline"></div>
                             <label for="search">
-                                Search an event 🔎
+                                Search an event
                             </label>
                             {{filterEvents}}
                         </div>
@@ -73,19 +73,19 @@
                             <input v-model="inputText" type="text" name="search" id="search2"class="px-2 " required>
                             <div class="underline"></div>
                             <label for="search2">
-                                Search an event 🔎
+                                Search an event
                             </label>
                             {{filterEvents}}
                         </div>
                         <button @click="showCategories" type="button" class="filterByCat-button">
-                            Filter by category 🎯
+                            Filter by category
                         </button>
                         <div class="show-favs-container">
                             <button v-if="!show" type="button" @click="showFavorites" class="fav display-favs">
-                                Show favorites 👇
+                                Show favorites 
                             </button>
                             <button v-else="show" type="button" @click="showFavorites" class="fav display-favs">
-                                Hide favorites ☝
+                                Hide favorites 
                             </button>
                         </div>
                     </form>
@@ -101,13 +101,13 @@
 
             <section v-if="show">
                 <div v-if="!favorites.length" class="not-found-favorite">
-                    <h4>You have no saved events in favorites🤨</h4>
+                    <h4>You have no saved events in favorites</h4>
                     <p>Try adding one in the section below.</p>
                 </div>
                 
                 <div v-if="favorites.length" class="favorites">
                     <div class="title-favorites-container">
-                        <h4>Favorites 💖</h4>
+                        <h4>Favorites</h4>
                         <p>You can view the details of your favorite events or delete them.</p>
                     </div>
                     <div v-for="event in favorites" class="card col-12 col-sm-6 col-md-4">
@@ -118,11 +118,11 @@
                             <h4>{{event.name}}</h4>
                             <p class="pb-3">{{event.description}}</p>
                             <article class="price">
-                                <h6 class="title-price">${{event.price}}💸</h6>
+                                <h6 class="title-price">${{event.price}}</h6>
                             </article>
                             <a class="view-events" :href="`./details.html?id=${event._id}`">View</a>
                             <button @click="deleteFavorite(event)" class="fav mb-3" >
-                                Remove 🗑️
+                                Remove
                             </button>
                         </div>
                     </div>
@@ -145,14 +145,14 @@
                         </figure>
                         <div>
                             <h4>{{event.name}}</h4>
-                            <p class="pb-3">{{event.description}}</p>
+                            <p class="py-2">{{event.description}}</p>
                             <article class="price">
-                                <h6 class="title-price">${{event.price}}💸</h6>
+                                <h6 class="title-price">${{event.price}}</h6>
                             </article>
                             <div class="view-events-container">
                                 <a class="view-events" :href="`./details.html?id=${event._id}`">View</a>
                                 <button @click="addFavorite($event,event)" class="fav-heart">
-                                    💖
+                                    Add to favs
                                 </button>
                             </div>
                         </div>
